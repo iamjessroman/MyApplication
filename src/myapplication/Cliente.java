@@ -9,9 +9,9 @@ import java.io.FileOutputStream;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
-import javax.ws.rs.ClientErrorException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.WebTarget;
+//import javax.ws.rs.ClientErrorException;
+//import javax.ws.rs.client.Client;
+//import javax.ws.rs.client.WebTarget;
 
 /**
  * Jersey REST client generated for REST resource:Download [/descarga]<br>
@@ -27,13 +27,13 @@ import javax.ws.rs.client.WebTarget;
  */
 public class Cliente {
 
-    private WebTarget webTarget;
-    private Client client;
+//    private WebTarget webTarget;
+//    private Client client;
     private static final String BASE_URI = "http://localhost:9090/Servidor/app";
 
     public Cliente() {
-        client = javax.ws.rs.client.ClientBuilder.newClient();
-        webTarget = client.target(BASE_URI).path("descarga");
+//        client = javax.ws.rs.client.ClientBuilder.newClient();
+//        webTarget = client.target(BASE_URI).path("descarga");
     }
 
     public void downloadJson() {
@@ -63,7 +63,7 @@ public class Cliente {
     }
 
     public void close() {
-        client.close();
+//        client.close();
     }
 
 }

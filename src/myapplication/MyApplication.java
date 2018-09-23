@@ -5,7 +5,10 @@
  */
 package myapplication;
 
+import java.awt.Color;
 import java.awt.Event;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -14,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 
 public class MyApplication extends Application implements EventHandler {
  private Stage stage = null;
@@ -37,10 +41,14 @@ public class MyApplication extends Application implements EventHandler {
         scene.setRoot(root);
         stage.setScene(scene);
         stage.show();
+
+ Pixel obj = new Pixel();
+//        obj.metodo();
     }
     @Override
     public void handle(javafx.event.Event event) {       
         pantallaCompleta(stage);
+                      
     }
     public void pantallaCompleta(Stage escena) {
         if(!estaFull) {
@@ -48,12 +56,18 @@ public class MyApplication extends Application implements EventHandler {
         } else {
             stage.setFullScreen(false);
         }
-        estaFull = !estaFull;       
+        estaFull = !estaFull;     
+ 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception  {
         launch(args);
+        
+        
+        
     }
+    
+
 
     
 }
