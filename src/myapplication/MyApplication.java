@@ -5,19 +5,16 @@
  */
 package myapplication;
 
-import java.awt.Color;
-import java.awt.Event;
-import java.awt.image.BufferedImage;
-import java.io.File;
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import javax.imageio.ImageIO;
 
 public class MyApplication extends Application implements EventHandler {
  private Stage stage = null;
@@ -26,9 +23,6 @@ public class MyApplication extends Application implements EventHandler {
     @Override
     public void start(Stage stage) {
         
-        Cliente cl = new Cliente();
-        cl.downloadImage();
-        cl.downloadJson();
         this.stage = stage;
         stage.setWidth(1200);
         stage.setHeight(720);
@@ -38,12 +32,12 @@ public class MyApplication extends Application implements EventHandler {
         final WebEngine webEngine = browser.getEngine();
         webEngine.load("http://localhost:9090/Cliente/");
         root.getChildren().addAll(browser);
+        Button button = new Button("My Button");
+        root.getChildren().add(button);
         scene.setRoot(root);
         stage.setScene(scene);
         stage.show();
 
- Pixel obj = new Pixel();
-//        obj.metodo();
     }
     @Override
     public void handle(javafx.event.Event event) {       
