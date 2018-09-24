@@ -5,6 +5,12 @@
  */
 package myapplication;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -35,10 +41,11 @@ public class MyApplication extends Application implements EventHandler {
         final WebEngine webEngine = browser.getEngine();
         webEngine.load("http://localhost:9090/Cliente/");
         root.getChildren().addAll(browser);
-        Button button = new Button("My Button");
+        Button button = new Button("Cargar");
         TextArea textArea = new TextArea();
-        root.getChildren().add(button);
+        
         root.getChildren().add(textArea);
+        root.getChildren().add(button);
         scene.setRoot(root);
         stage.setScene(scene);
         stage.show();
@@ -49,15 +56,33 @@ public class MyApplication extends Application implements EventHandler {
                 String string = textArea.getText();
                 Parqueos p = new Parqueos();
                 p.setVisible(true);
-                Parqueos.Text.setText(string);
-     
-            }
-        });
+
+                String ruta = "C:\\Users\\Tesis\\Desktop\\archivo.txt";
+                File archivo = new File(ruta);
+                BufferedWriter bw;
+                try {
+                if (archivo.exists()) {
+                        bw = new BufferedWriter(new FileWriter(archivo));
+                        bw.write(string);
+                  
+                } else {
+                    bw = new BufferedWriter(new FileWriter(archivo));
+                    bw.write(string);
+                }
+                bw.close();
+                  } catch (IOException ex) {
+                        Logger.getLogger(MyApplication.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+            
+        }
+    }
+
+);
 
     }
 
     @Override
-    public void handle(javafx.event.Event event) {
+        public void handle(javafx.event.Event event) {
         pantallaCompleta(stage);
 
     }
