@@ -23,6 +23,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.xml.bind.DatatypeConverter;
 
 /**
@@ -69,44 +70,22 @@ public class Parqueos extends javax.swing.JFrame {
                 e.printStackTrace();
             }
         }
+        JPanel panel = new JPanel();
+
+            for (int i = 1; i <= 8; i++) {
+            ImageIcon icon = new ImageIcon("C:\\Users\\Tesis\\Desktop\\test_image" + i + ".png");
+            String nombre = String.valueOf(i);
+            JLabel templabel = new JLabel(nombre);
+            templabel.setSize(300, 300);
+            System.out.println(templabel.getHeight());
+            
+            Icon icono = new ImageIcon(icon.getImage().getScaledInstance(templabel.getWidth(), templabel.getHeight(), Image.SCALE_DEFAULT));
+            templabel.setIcon(icono);
+            panel.add(templabel);
+            
+        }
         
 
-
- ImageIcon  icon = new ImageIcon("C:\\Users\\Tesis\\Desktop\\test_image" + 1 + ".png");
-     Icon icono = new ImageIcon(icon.getImage().getScaledInstance(this.jLabel1.getWidth(), this.jLabel1.getHeight(), Image.SCALE_DEFAULT));
-       this.jLabel1.setText(null);
-       this.jLabel1.setIcon(icono);
-
-     icon = new ImageIcon("C:\\Users\\Tesis\\Desktop\\test_image" + 2 + ".png");
-        icono = new ImageIcon(icon.getImage().getScaledInstance(this.jLabel2.getWidth(), this.jLabel2.getHeight(), Image.SCALE_DEFAULT));
-       this.jLabel2.setText(null);
-       this.jLabel2.setIcon(icono);
-
-     icon = new ImageIcon("C:\\Users\\Tesis\\Desktop\\test_image" + 3 + ".png");
-        icono = new ImageIcon(icon.getImage().getScaledInstance(this.jLabel3.getWidth(), this.jLabel3.getHeight(), Image.SCALE_DEFAULT));
-       this.jLabel3.setText(null);
-       this.jLabel3.setIcon(icono);
-
-     icon = new ImageIcon("C:\\Users\\Tesis\\Desktop\\test_image" + 4 + ".png");
-        icono = new ImageIcon(icon.getImage().getScaledInstance(this.jLabel4.getWidth(), this.jLabel4.getHeight(), Image.SCALE_DEFAULT));
-       this.jLabel4.setText(null);
-       this.jLabel4.setIcon(icono);
-
-     icon = new ImageIcon("C:\\Users\\Tesis\\Desktop\\test_image" + 5 + ".png");
-        icono = new ImageIcon(icon.getImage().getScaledInstance(this.jLabel5.getWidth(), this.jLabel5.getHeight(), Image.SCALE_DEFAULT));
-       this.jLabel5.setText(null);
-       this.jLabel5.setIcon(icono);
-
-     icon = new ImageIcon("C:\\Users\\Tesis\\Desktop\\test_image" + 6 + ".png");
-        icono = new ImageIcon(icon.getImage().getScaledInstance(this.jLabel6.getWidth(), this.jLabel6.getHeight(), Image.SCALE_DEFAULT));
-       this.jLabel6.setText(null);
-       this.jLabel6.setIcon(icono);
-
-     icon = new ImageIcon("C:\\Users\\Tesis\\Desktop\\test_image" + 7 + ".png");
-        icono = new ImageIcon(icon.getImage().getScaledInstance(this.jLabel7.getWidth(), this.jLabel7.getHeight(), Image.SCALE_DEFAULT));
-       this.jLabel7.setText(null);
-       this.jLabel7.setIcon(icono);
-        
     }
 
     /**
@@ -214,9 +193,9 @@ public class Parqueos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
